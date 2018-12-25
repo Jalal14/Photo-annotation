@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Login</h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {{ form.hidden_tag() }}
+                        <div class="row">
+                            {{ form.name.label }}: {{ form.name }}
+                            {% for message in form.name.errors %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            {{ form.username.label }}: {{ form.username }}
+                            {% for message in form.username.errors %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            {{ form.email.label }}: {{ form.email }}
+                            {% for message in form.email.errors %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            {{ form.password.label }}: {{ form.password }}
+                            {% for message in form.password.errors %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            {{ form.confirmPass.label }}: {{ form.confirmPass }}
+                            {% for message in form.confirmPass.errors %}
+                                {{ message }}
+                            {% endfor %}
+                        </div>
+                        <div class="row">
+                            {{ form.register }}
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    Already a member? <a href="{{ url_for('login') }}">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
