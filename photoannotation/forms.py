@@ -6,8 +6,8 @@ from wtforms.validators import DataRequired, Email
 
 
 class LoginForm(FlaskForm):
-    username = StringField("Username", [validators.Length(min=5, message='Name must be at least 5 characters long')])
-    password = PasswordField("Password", [validators.Length(min=6, message="Password must be at least 6 characters long")])
+    username = StringField("Username", [validators.DataRequired()])
+    password = PasswordField("Password")
     login = SubmitField("Login")
     pass
 
